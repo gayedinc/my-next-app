@@ -1,5 +1,11 @@
+"use client";
+
+import { useState } from "react"
+
 export default function Button() {
+  const [count, setCount] = useState(0);
+
   return (
-    <button>Click me</button>
+    <button onClick={() => setCount(count + 1)}>Count: {count}</button>
   )
 }
