@@ -1,9 +1,13 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Button from "@components/Button"
 
 export default function Page() {
   return (
-    <h1>Merhaba Next Dünyası</h1>
+    <>
+      <h1>Merhaba Next Dünyası</h1>
+      <Button />
+    </>
   )
 }
 
