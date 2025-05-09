@@ -1,12 +1,17 @@
 import Link from 'next/link';
 
-export default function Page() {
+export default async function Page() {
+
+  const { posts } = await fetch('https://dummyjson.com/posts').then(x => x.json());
+
   return (
     <>
       <h3>Son Yazılarım</h3>
       <ul>
-        <li><Link href={'/blog/merhaba-dunya'}>Merhaba Dünya</Link></li>
-        <li><Link href={'/blog/ilk-next-projesi'}>Next Projesi</Link></li>
+        {posts.map(x =>
+          <li key={x.id}>
+            <Link href={`/blog/${x.id}`}>{x.title}</Link>
+          </li>)}
       </ul>
     </>
   )
