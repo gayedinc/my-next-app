@@ -7,6 +7,8 @@ export default async function Page() {
   return (
     <>
       <h3>Son Yazılarım</h3>
+      <Link href={`/blog/add`}>Yeni</Link>
+      <hr />
       <ul>
         {posts.map(x =>
           <li key={x.id}>
